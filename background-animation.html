@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+      }
+      .container {
+        height: 20em;
+        background-color: black;
+        position: relative;
+      }
+      .line-1,
+      .line-2 {
+        display: flex;
+        position: relative;
+        height: 0.01em;
+        width: 80%;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        /* box-shadow: 0 0 1.5em white; */
+      }
+      .line-1 {
+        top: 8em;
+        left: 8%;
+      }
+      .line-2 {
+        top: 12em;
+        left: 12%;
+      }
+      .circle-1,
+      .circle-2 {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(241, 48, 48, 0.911);
+        height: 1em;
+        width: 1em;
+        top: -0.5em;
+        box-shadow: 0 0 1em wheat;
+      }
+      @keyframes move-1 {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+      @keyframes move-2 {
+        0% {
+          right: 0;
+        }
+        100% {
+          right: 100%;
+        }
+      }
+      @keyframes orbit{
+            to{
+                transform: rotate(360deg);
+            }
+        }
+      .circle-1 {
+        animation: move-1 30s linear infinite alternate;
+      }
+      .circle-2 {
+        animation: move-2 30s linear infinite alternate;
+      }
+      .a{
+        position: absolute;
+        height: 2em;
+        width: 2em;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+        border-width: .1em 0.01em 0 0;
+        border-radius: 50%;
+        top: -.5em;
+        left: -.5em;
+        animation: orbit 5s linear infinite;
+      }
+      .a::before{
+        content: '';
+        position: absolute;
+        height: .3em;
+        width: .3em;
+        left: 1.5em;
+        background-color: white;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="line-1">
+        <div class="circle-1"><div class="a"></div></div>
+      </div>
+      <div class="line-2">
+        <div class="circle-2"><div class="a"></div></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Span with grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 10px;
+        }
+        .box{
+            background-color: gray;
+        }
+        #box-1{
+            background-color: white;
+            grid-row: span 5;
+            display: grid;
+            grid-template-rows: repeat(3, 200px);
+            gap: 10px;
+        }
+        .block{
+            background-color: aqua;
+        }
+        #box-4{
+            grid-row: span 2;
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(2, 2fr);
+            gap: 10px;
+        }
+        .block-2{
+            background-color: purple;
+        }
+        #box-9{
+            grid-column: span 2;
+        }
+        #box-10, #box-11{
+            grid-column: span 4;
+        }
+        #box-5, #box-6{
+            background-color: salmon;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="box" id="box-1">
+            <div class="block">Block-1</div>
+            <div class="block">Block-2</div>
+            <div class="block">Block-3</div>
+        </div>
+        <div class="box" id="box-2">box 2</div>
+        <div class="box" id="box-3">box 3</div>
+        <div class="box" id="box-4">
+            <div class="block-2">block 1</div>
+            <div class="block-2">block 2</div>
+            <div class="block-2">block 3</div>
+            <div class="block-2">block 4</div>
+        </div>
+        <div class="box" id="box-5">box 5</div>
+        <div class="box" id="box-6">box 6</div>
+        <!-- <div class="box" id="box-7">box 7</div> -->
+        <div class="box" id="box-8">box 8</div>
+        <div class="box" id="box-9">box 9</div>
+        <div class="box" id="box-10">box 10</div>
+        <div class="box" id="box-11">box 11</div>
+        <!-- <div class="box" id="box-12">box 12</div> -->
+    </div>
+  </body>
+</html>
